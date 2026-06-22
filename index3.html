@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Apto Coach | Smart Automation for Coaching Businesses</title>
+  <meta name="description" content="Apto Coach helps coaches, trainers, academies and consultants automate participant journeys through WhatsApp and Email with AI-powered engagement automation." />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.7;
+    }
+
+    .main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 26px 16px 44px;
+    }
+
+    .top {
+      background: #eef6ff;
+      padding: 18px 22px;
+      border-radius: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 28px rgba(2, 132, 199, 0.08);
+    }
+
+    .top a {
+      text-decoration: none;
+    }
+
+    .name {
+      color: #111827;
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .name b {
+      color: #0284c7;
+    }
+
+    .visit {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 900;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #eef6ff, #ffffff);
+      border: 1px solid #dbeafe;
+      border-radius: 32px;
+      padding: 58px 30px;
+      text-align: center;
+    }
+
+    .label {
+      display: inline-block;
+      background: #dbeafe;
+      color: #0284c7;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.1;
+      margin: 0 0 16px;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 14px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      color: #475569;
+      font-size: 16px;
+      max-width: 850px;
+      margin: 0 auto 16px;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .action {
+      background: #0284c7;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-weight: 900;
+    }
+
+    .action.alt {
+      background: #ffffff;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }
+
+    .link {
+      color: #0284c7;
+      font-weight: 900;
+      text-decoration: none;
+      border-bottom: 2px solid rgba(2, 132, 199, 0.25);
+    }
+
+    .section {
+      margin-top: 24px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+    }
+
+    .grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 18px;
+    }
+
+    .box {
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 24px;
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.05);
+    }
+
+    .box .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: #e0f2fe;
+      display: grid;
+      place-items: center;
+      color: #0284c7;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .box h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      color: #111827;
+    }
+
+    .box p {
+      margin: 0;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .process {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .step {
+      background: #f8fbff;
+      border: 1px solid #dbeafe;
+      border-radius: 22px;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .num {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      background: #0284c7;
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      color: #111827;
+    }
+
+    .step p {
+      margin: 0;
+      color: #64748b;
+      font-size: 14px;
+      max-width: 100%;
+    }
+
+    .cta {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #0f172a, #0284c7);
+      color: #ffffff;
+      padding: 40px 26px;
+      border-radius: 30px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: #ffffff;
+      margin: 0 0 12px;
+    }
+
+    .cta p {
+      color: #dbeafe;
+    }
+
+    .cta a {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .bottom {
+      text-align: center;
+      margin-top: 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media(max-width:600px) {
+      .top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .hero,
+      .section,
+      .cta {
+        border-radius: 22px;
+        padding: 30px 18px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .action {
+        text-align: center;
+      }
+
+      .step {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="top">
+      <a href="https://aptocoach.com/" target="_blank" class="name">Apto<b>Coach</b></a>
+      <a href="https://aptocoach.com/" target="_blank" class="visit">Visit aptocoach.com</a>
+    </div>
+
+    <section class="hero">
+      <span class="label">Apto Coach | AI-Powered Participant Journey Automation</span>
+
+      <h1>Simple Automation for Serious Coaching Growth</h1>
+
+      <p>
+        <strong>Apto Coach</strong> is built for coaches, trainers, academies, consultants and learning businesses
+        that want to manage participant communication in a smarter and more professional way.
+      </p>
+
+      <p>
+        With Apto Coach, you can automate participant journeys through WhatsApp and Email, making onboarding,
+        reminders, follow-ups and engagement messages easier to manage at scale.
+        Explore more at
+        <a href="https://aptocoach.com/" target="_blank" class="link">aptocoach.com</a>.
+      </p>
+
+      <div class="actions">
+        <a href="https://aptocoach.com/" target="_blank" class="action">Explore Apto Coach</a>
+        <a href="https://aptocoach.com/" target="_blank" class="action alt">Visit Official Website</a>
+        <a href="https://aptocoach.com/" target="_blank" class="action alt">Start Automation</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Why Coaching Businesses Need Apto Coach</h2>
+
+      <p>
+        Most coaching businesses spend too much time on repetitive communication — sending reminders,
+        checking participant status, following up manually and keeping learners engaged. This often creates delays,
+        missed messages and an inconsistent experience.
+      </p>
+
+      <p>
+        <a href="https://aptocoach.com/" target="_blank" class="link">Apto Coach</a>
+        helps you create a guided communication system where every participant receives timely updates,
+        reminders and follow-ups without depending on manual effort every time.
+      </p>
+
+      <div class="grid">
+        <div class="box">
+          <div class="icon">01</div>
+          <h3>Professional Onboarding</h3>
+          <p>Welcome new participants with structured messages and make their first experience clear and smooth.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">02</div>
+          <h3>Session Reminders</h3>
+          <p>Send reminders through WhatsApp and Email so participants stay updated before every session.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">03</div>
+          <h3>Smart Follow-ups</h3>
+          <p>Keep participants engaged after sessions with automated follow-up communication and next-step guidance.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">04</div>
+          <h3>Better Engagement</h3>
+          <p>Create a connected journey that helps participants feel guided, supported and involved.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>What You Can Automate With Apto Coach</h2>
+
+      <p>
+        Apto Coach is not just about sending messages. It helps you build a complete participant journey where every
+        stage of communication can be planned, automated and improved.
+        Learn more by visiting
+        <a href="https://aptocoach.com/" target="_blank" class="link">https://aptocoach.com/</a>.
+      </p>
+
+      <div class="grid">
+        <div class="box">
+          <div class="icon">WA</div>
+          <h3>WhatsApp Journey</h3>
+          <p>Use WhatsApp to send important updates, reminders, announcements and engagement messages.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">EM</div>
+          <h3>Email Journey</h3>
+          <p>Create email flows for onboarding, learning updates, course instructions and progress communication.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">AI</div>
+          <h3>AI-Powered Flow</h3>
+          <p>Make communication smarter with structured journeys that support better participant experience.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">SC</div>
+          <h3>Scalable Process</h3>
+          <p>Manage more participants without increasing your daily manual communication workload.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">TR</div>
+          <h3>Training Updates</h3>
+          <p>Share class updates, batch information, learning resources and next steps in an organized way.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">RT</div>
+          <h3>Retention Support</h3>
+          <p>Keep participants active and reduce drop-offs with consistent follow-up and engagement nudges.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>How Apto Coach Works</h2>
+
+      <p>
+        The idea is simple: design your participant journey once and let Apto Coach support your communication flow.
+        Visit
+        <a href="https://aptocoach.com/" target="_blank" class="link">aptocoach.com</a>
+        to explore the official platform.
+      </p>
+
+      <div class="process">
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <h3>Add Your Participants</h3>
+            <p>Start by organizing your learners, trainees, clients or community members inside a structured journey.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <h3>Create the Communication Flow</h3>
+            <p>Plan what participants should receive at each stage — welcome messages, reminders, follow-ups and updates.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <h3>Automate WhatsApp & Email</h3>
+            <p>Let Apto Coach send timely communication through the channels participants already use.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <h3>Improve Engagement</h3>
+            <p>Create a better experience where participants stay informed, connected and motivated throughout the journey.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Who Can Use Apto Coach?</h2>
+
+      <p>
+        <a href="https://aptocoach.com/" target="_blank" class="link">Apto Coach</a>
+        is useful for any business that manages learning, training, mentoring or coaching journeys.
+        It helps you keep communication clear, timely and professional.
+      </p>
+
+      <div class="grid">
+        <div class="box">
+          <div class="icon">BC</div>
+          <h3>Business Coaches</h3>
+          <p>Automate client onboarding, reminders, accountability messages and follow-up communication.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">AC</div>
+          <h3>Academies</h3>
+          <p>Manage batch communication, class updates, reminders and student engagement journeys.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">CT</div>
+          <h3>Consultants</h3>
+          <p>Create structured communication flows for workshops, programs and client journeys.</p>
+        </div>
+
+        <div class="box">
+          <div class="icon">CC</div>
+          <h3>Course Creators</h3>
+          <p>Keep learners active with planned communication, learning prompts and milestone messages.</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a href="https://aptocoach.com/" target="_blank" class="action">Visit Apto Coach</a>
+        <a href="https://aptocoach.com/" target="_blank" class="action alt">Explore Features</a>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to Make Your Coaching Communication Smarter?</h2>
+
+      <p>
+        Apto Coach helps you move from scattered manual messages to organized participant journey automation.
+        Use WhatsApp and Email to welcome, remind, nurture and engage participants with a more professional system.
+      </p>
+
+      <p>
+        Start exploring Apto Coach now at
+        <a href="https://aptocoach.com/" target="_blank">https://aptocoach.com/</a>.
+      </p>
+
+      <div class="actions">
+        <a href="https://aptocoach.com/" target="_blank" class="action">Go to Apto Coach</a>
+        <a href="https://aptocoach.com/" target="_blank" class="action alt">Visit Website</a>
+      </div>
+    </section>
+
+    <div class="bottom">
+      Official Website:
+      <a href="https://aptocoach.com/" target="_blank" class="link">https://aptocoach.com/</a>
+    </div>
+
+  </div>
+</body>
+</html>
